@@ -1,0 +1,12 @@
+{
+  "install_id": "00915879-d78f-4462-bfd0-a55befb90e91",
+  "default_tenant": "coffee-lamprey-34099.cic-demo-platform.auth0app.com",
+  "tenants": {
+    "coffee-lamprey-34099.cic-demo-platform.auth0app.com": {
+      "name": "coffee-lamprey-34099",
+      "domain": "coffee-lamprey-34099.cic-demo-platform.auth0app.com",
+      "expires_at": "2025-10-21T00:55:52.8186876+05:30",
+      "client_id": "jf2E8qlc6hiaduia8XGniZabH5eTTI0h"
+    }
+  }
+}

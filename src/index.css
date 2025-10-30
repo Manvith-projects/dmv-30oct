@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 
 /** UDS Custom Variant for Dark theme **/
 @custom-variant dark (&:is(.dark *));
@@ -11,6 +12,195 @@
   }
 }
 
+/* Login screen specific styles to match provided design */
+.top-bar {
+  background: linear-gradient(90deg, #1e73be, #1664a6);
+}
+.translate-btn {
+  font-weight: 600;
+  border-radius: 18px;
+}
+.hero {
+  min-height: 160px;
+  display: flex;
+  align-items: flex-end;
+}
+.hero-title {
+  letter-spacing: -2px;
+}
+.login-card {
+  border-radius: 6px;
+}
+.wallet-badge svg {
+  display: inline-block;
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+/* UL theme header/nav/hero styles */
+.ul-topbar {
+  background: #1982c8;
+  color: #fff;
+}
+.ul-topbar .ul-logo {
+  background-position: left center;
+}
+.ul-nav {
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+.ul-hero {
+  background: linear-gradient(180deg, #4da7ea 0%, #256fb3 100%);
+  min-height: 260px;
+  position: relative;
+  overflow: visible;
+}
+.ul-hero .hero-title {
+  color: #fff;
+  font-size: 4.5rem;
+  font-weight: 800;
+  font-family: var(--font-heading, serif);
+}
+
+.ul-content {
+  /* content sits above the angled white strip */
+  margin-top: -80px;
+  padding-bottom: 48px;
+}
+
+@media (max-width: 768px) {
+  .ul-hero .hero-title {
+    font-size: 2.5rem;
+  }
+  .ul-hero {
+    min-height: 160px;
+  }
+  .ul-hero::after {
+    bottom: -60px;
+    height: 120px;
+  }
+  .ul-content {
+    margin-top: -60px;
+  }
+}
+
+/* Login card and form styles */
+.login-card {
+  background: var(--ul-theme-color-widget-background, #fff);
+  padding: 0;
+}
+.welcome-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-family: var(--font-heading, serif);
+}
+.section-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1e2b3a;
+  font-family: var(--font-heading, serif);
+}
+.small-note {
+  font-size: 0.875rem;
+  color: #333;
+}
+.label-text {
+  font-size: 0.875rem;
+  color: #2b3b4a;
+  margin-bottom: 6px;
+}
+.input-field {
+  border: 1px solid #cfe2f3;
+  background: #fff;
+  border-radius: 2px;
+  padding: 10px 12px;
+  box-shadow: none;
+}
+.input-field:focus {
+  outline: none;
+  border-color: #9fc9ee;
+  box-shadow: 0 0 0 3px rgba(99, 93, 255, 0.06);
+}
+.text-link {
+  color: #0e67b3;
+}
+.login-button {
+  background: linear-gradient(180deg, #0b6aa0 0%, #085f92 100%);
+  color: #fff;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 24px;
+  font-weight: 700;
+  box-shadow: none;
+}
+.login-button:hover {
+  filter: brightness(0.95);
+}
+
+.wallet-badge {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Adjust small muted text */
+.text-muted {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+  .login-card {
+    padding: 18px;
+  }
+}
+
+/* Form helper classes matching the HTML sample */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin: 0 0 12px 0;
+}
+.wallet-login .wallet-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.wallet-link {
+  color: var(--ul-theme-color-primary-button, #0e67b3);
+  font-weight: 600;
+}
+.form-input {
+  display: block;
+  width: 100%;
+}
+.helper-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--ul-theme-color-primary-button, #0e67b3);
+  font-size: 0.875rem;
+}
+.login-container {
+  max-width: 100%;
+}
+.error-alert {
+  color: #b91c1c;
+  font-size: 0.875rem;
+  min-height: 18px;
+}
+.links {
+  color: #0077c8;
+  text-decoration: underline;
+  font-weight: bold;
+}
 /** UL Custom Utilities:
 Created to support alignment related utlities like justify, text-align etc with dynamic theming values 
 **/
@@ -185,14 +375,17 @@ Created to support alignment related utlities like justify, text-align etc with 
   --ul-theme-font-links-size: 0.875rem;
   --ul-theme-font-links-weight: 700;
 
+  /* Heading font (Playfair Display) - used for hero and headings */
+  /* --font-heading: 'Playfair Display', serif; */
+
   /* Page Background */
   --ul-theme-page-bg-page-layout: center;
-  --ul-theme-page-bg-background-color: #bababa;
-  --ul-theme-page-bg-background-image-url: none;
+  --ul-theme-page-bg-background-color: #fff;
+  --ul-theme-page-bg-background-image-url: "https://www.dmv.ca.gov/imageserver/theme_10up/images/hero-mountains.png";
 
   /* Widget */
   --ul-theme-widget-logo-position: center;
-  --ul-theme-widget-logo-url: "https://cdn.auth0.com/blog/auth0_by_okta_logo_black.png";
+  --ul-theme-widget-logo-url: "https://www.dmv.ca.gov/imageserver/theme_10up/images/logo-ca-dmv-white.svg";
   --ul-theme-widget-logo-height: 52px;
   --ul-theme-widget-header-text-alignment: center;
   --ul-theme-widget-social-buttons-layout: bottom;

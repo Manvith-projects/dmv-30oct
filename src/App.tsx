@@ -5,11 +5,12 @@ import { getCurrentScreen } from "@auth0/auth0-acul-js";
 import { getScreenComponent } from "@/utils/screen/screenLoader";
 
 const App = () => {
-  const [screen, setScreen] = useState("login-id");
+  // Default to the visual "login" screen so the modified UI shows by default
+  const [screen, setScreen] = useState("login");
 
   useEffect(() => {
     const current = getCurrentScreen();
-    setScreen(current || "login-id");
+    setScreen(current || "login");
   }, []);
 
   const ScreenComponent = getScreenComponent(screen);
